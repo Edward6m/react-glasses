@@ -5,4 +5,12 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: "/react-glasses/",
   plugins: [react()],
+  server: {
+    host: 'localhost',
+    hmr: {
+      protocol: 'ws',
+      host: 'localhost',
+      port: 5173,
+    },
+  },
 })

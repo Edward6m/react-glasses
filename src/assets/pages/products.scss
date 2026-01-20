@@ -1,0 +1,83 @@
+.mt-10 {
+  margin-top: 80px;
+}
+.mt-20 {
+  margin-top: 80px;
+}
+.pb-20 {
+  padding-bottom: 80px; /* 用 padding 撐開，不會合併 */
+}
+
+.custom-tab-row {
+  margin: 0;
+}
+
+.custom-tab-btn {
+  width: 100%;
+  padding: 0.75rem 0;
+  height: 64px;
+  font-size: 32px;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #dcdcdc;
+  border-radius: 0;
+}
+
+.custom-tab-btn.active {
+  background-color: #fff;
+  color: #000;
+  box-shadow: inset 0 -4px 0 $subColor; /* 紅色底線 */
+}
+
+/* RWD: 小於768px時三個按鈕一列滿寬 */
+@media (max-width: 767.98px) {
+  .custom-tab-row {
+    width: 100vw;
+    flex-wrap: nowrap;
+  }
+  .custom-tab-btn {
+    font-size: 20px;
+    font-weight: medium;
+  }
+}
+@media (max-width: 375px) {
+  .custom-tab-row {
+    width: 100vw;
+  }
+  .custom-tab-btn {
+    font-size: 14px;
+    font-weight: medium;
+  }
+}
+
+/* active 只加「內縮」底線，不影響高度 */
+.custom-link.active {
+  box-shadow: inset 0 -4px 0 $subColor; /* 用 inset 取代 border-bottom */
+  border: 1px solid #dcdcdc;
+}
+
+.product-card {
+  transition: border 0.2s ease;
+  border: 0px;
+}
+
+.product-card:hover {
+  border: 2px solid #007bff; /* 藍色外框 */
+}
+
+/* 分頁按鈕外框與文字改為黑色 */
+.custom-pagination .page-link {
+  color: #000; /* 文字黑色 */
+  border: 1px solid #000; /* 外框黑色 */
+  border-radius: 0 !important; /* 方形樣式 */
+}
+.custom-pagination .page-link:hover {
+  background-color: #000; /* hover 背景黑色 */
+  color: #fff; /* hover 文字白色 */
+}
+/* active 狀態 */
+.custom-pagination .active .page-link {
+  background-color: #000;
+  border-color: #000;
+  color: #fff;
+}

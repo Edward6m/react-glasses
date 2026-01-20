@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans TC", roboto, sans-serif;
+  /* color: #650300; */
+}
+
+/* 整體背景 */
+.mobile-menu {
+  min-height: 100vh;
+  background-color: #b40000;
+  padding: 16px;
+  color: #fff !important;
+}
+
+/* Logo */
+.menu-logo img {
+  max-width: 100%; /* 預設自適應 */
+  height: auto;
+  /* height: 36px; */
+  margin-bottom: 16px;
+  @media (max-width: 375px) {
+    max-height: 48px;
+  }
+}
+
+.menu-grid {
+  border: 5px solid #ffffff; /* 白線外框 */
+  color: #fff;
+}
+
+/* Menu Item */
+.menu-item {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  cursor: pointer; /* 滑鼠移過去顯示手型 */
+}
+.menu-item:hover {
+  background-color: #f5f5f5; /* hover 時背景變灰 */
+  color: black; /* hover 時文字變紅 */
+}
+/* 點擊回饋 */
+.menu-item:active {
+  color: blue !important;
+  font-weight: bold;
+}
+
+/* 僅限 375px 以下 */
+@media (min-width: 376px) {
+  .mobile-menu {
+    display: none;
+  }
+}

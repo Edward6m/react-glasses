@@ -1,0 +1,274 @@
+.container {
+  max-width: 1296px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    max-width: 696px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 1320px) {
+  body {
+    overflow-x: hidden; /* 全局避免水平捲動 */
+  }
+}
+
+.hero {
+  min-height: 787px;
+  background: url("../../assets/image/home-header.png") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  height: auto;
+  max-width: 100%;
+
+  @include mobile {
+    background-image: url("../../assets/image/home-header-sm.png");
+  }
+}
+
+.hero-content {
+  text-align: right;
+  // margin-right: 36px;
+  // padding-right: 7.6923%;
+}
+
+.hero-title {
+  font-size: 64px;
+  font-weight: bold;
+  @include mobile {
+    font-size: 24px;
+  }
+}
+
+.hero-title1 {
+  font-size: 36px;
+  @media (max-width: 376px) {
+    font-size: 16px;
+  }
+}
+
+.ft-color {
+  color: $fontColor;
+}
+
+.btn {
+  display: inline-block;
+  background: $subColor;
+  color: #fff;
+  padding: 12px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  opacity: 1;
+
+  @include mobile {
+    font-weight: 500;
+  }
+}
+
+// feature
+
+.feature {
+  width: 100%;
+  background: $mainColor no-repeat;
+  color: $fontColor;
+}
+.feature-list {
+  background: $mainColor;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.feature-icon {
+  color: $fontColor;
+  display: block;
+  margin: 0 auto;
+  max-width: 83px;
+  height: auto;
+}
+.feature-item {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 16px;
+  color: $fontColor;
+}
+.feature-desc {
+  font-size: 16px;
+  margin-top: 8px;
+  color: #000000;
+  display: block;
+  text-align: left;
+  max-width: 306px;
+}
+.mt-20 {
+  margin-top: 80px;
+}
+.mb-20 {
+  margin-bottom: 80px;
+}
+
+/* 手機 (375px 以下) 卡片左右切齊 */
+.feature-card {
+  max-width: 306px;
+  @media (max-width: 375px) {
+    max-width: 100%;
+    margin: 0; /* 去掉左右間距 */
+  }
+}
+
+//------------------------------
+//classic
+
+.classic {
+  max-width: 416px; /* 卡片最大寬度，避免撐破 */
+  background: #ffffff;
+}
+.class-title {
+  color: $fontColor;
+  font-size: 48px;
+  @media (max-width: 375px) {
+    font-size: 24px;
+  }
+}
+.classic-text {
+  font-size: 48px;
+  color: $subColor;
+  @media (max-width: 375px) {
+    font-size: 36px;
+  }
+}
+
+//Collaboration cobrand
+
+.cobrand {
+  /* 2026 建議：手機版高度通常不寫死 max-height 以免文字溢出 */
+  min-height: 608px;
+  background: url("../../assets/image/index-bg.png") center/cover no-repeat;
+  padding: 80px 0;
+}
+
+/* 預設桌面版樣式 */
+.cobrand-list {
+  display: flex;
+  justify-content: center; /* 水平置中 */
+  gap: 24px; /* 每組之間的間距 */
+}
+
+.cobrand-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.cobrand-img {
+  max-height: 240px;
+  width: 100%;
+  object-fit: cover; /* 確保圖片不變形 */
+}
+
+/* --- 平板與手機版 (768px 以下) --- */
+@media (max-width: 768px) {
+  .cobrand {
+    padding: 40px 0; /* 手機版縮減上下距 */
+  }
+
+  .cobrand-list {
+    flex-direction: column; /* 轉為垂直排列 */
+    align-items: center; /* 關鍵：垂直置中對齊 */
+    gap: 40px; /* 增加每組之間的上下間距 */
+  }
+
+  .cobrand-item {
+    max-width: 448px; /* 限制手機版寬度避免過大 */
+    align-items: center; /* 確保項目內部也置中 */
+  }
+
+  .classic-text {
+    width: 100%; /* 讓文字背景填滿容器寬度 */
+    padding: 8px 0;
+  }
+}
+
+//Testimonials
+.test_name {
+  color: #000000;
+  font-size: 16px;
+}
+.test_mb {
+  margin-bottom: 48px;
+}
+
+.test_date {
+  color: #707070;
+  font-size: 14px;
+  margin-top: auto;
+
+  @media (max-width: 375px) {
+    margin-top: 75px;
+  }
+}
+.test_img {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  max-height: 306px;
+  max-width: 306px;
+}
+.custom-card-shadow {
+  box-shadow: 0px 2px 6px #00000029;
+  border: 1px solid #dee2e6;
+}
+
+//Contact
+
+.contact-bg {
+  background-color: $mainColor;
+}
+.contact-form {
+  max-width: 636px;
+}
+.contact-border {
+  border: 1px solid #000000;
+}
+
+.custom-checkbox .form-check-input {
+  border: 1px solid #000;
+  box-shadow: none;
+  border-radius: 0px;
+}
+.contact-form input,
+.contact-form textarea {
+  // width: 100%;
+  margin-bottom: 16px;
+  padding: 8px;
+}
+
+.btn-custom {
+  background-color: $subColor;
+  border-color: $subColor;
+  color: #fff;
+  //   max-width: 416px;
+  width: 416px;
+  max-height: 56px;
+  font-size: 16px;
+}
+
+/* hover */
+.btn-custom:hover {
+  background-color: #8f0500;
+  border-color: #8f0500;
+  color: #fff;
+}
+
+/* focus */
+.btn-custom:focus {
+  box-shadow: 0 0 0 0.25rem rgba(170, 6, 1, 0.4);
+}
+
+/* active（按下瞬間） */
+.btn-custom:active,
+.btn-custom.active {
+  background-color: #7a0400;
+  border-color: #7a0400;
+  color: #fff;
+}

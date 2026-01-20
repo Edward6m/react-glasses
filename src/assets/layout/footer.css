@@ -1,0 +1,25 @@
+.footer {
+  background: #aa0601;
+  color: #fff;
+  height: 353px;
+}
+
+.footer_menu {
+  font-size: 16px;
+  line-height: 24px;
+  height: 100%;
+  text-decoration: none;
+}
+
+.footer_icon {
+  width: 48px;
+  height: 48px;
+}
+
+.footer_phone {
+  font-size: 36px;
+}
+
+.margin_r {
+  margin-right: 48px;
+}/*# sourceMappingURL=footer.css.map */

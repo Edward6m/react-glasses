@@ -1,0 +1,33 @@
+.footer {
+  position: sticky;
+}
+.bg-subColor {
+  background-color: $subColor; /* 你的 $subColor  #aa0601*/
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.material-icons-outlined {
+  font-size: 24px;
+  @media (min-width: 768px) {
+    font-size: 36px;
+  }
+  @media (min-width: 375px) {
+    font-size: 24px;
+  }
+}
+.footer-icon {
+  max-width: 48px;
+  @media (min-width: 768px) {
+    max-width: 36px;
+  }
+  @media (min-width: 375px) {
+    max-width: 24px;
+  }
+}
+
+// @media (min-width: 768px) {
+//   .material-icons-outlined {
+//     font-size: 36px;
+//   }
+// }
