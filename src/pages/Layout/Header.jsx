@@ -23,12 +23,28 @@ function Header() {
           </Navbar.Brand>
 
           <Nav className="ms-auto nav">
-            <Nav.Link href="#products" onClick={() => navigate("/products")}>
+            {/* <Nav.Link href="#products" onClick={() => navigate("/products")}>
               系列鏡框
             </Nav.Link>
             <Nav.Link onClick={() => navigate("/")}>門市據點</Nav.Link>
             <Nav.Link onClick={() => navigate("/")}>部落格</Nav.Link>
-            <Nav.Link onClick={() => navigate("/")}>常見問題</Nav.Link>
+            <Nav.Link onClick={() => navigate("/")}>常見問題</Nav.Link> */}
+
+            <Nav.Link as={Link} to="/products">
+              系列鏡框
+            </Nav.Link>
+
+            <Nav.Link as={Link} to="/">
+              門市據點
+            </Nav.Link>
+
+            <Nav.Link as={Link} to="/">
+              部落格
+            </Nav.Link>
+
+            <Nav.Link as={Link} to="/">
+              常見問題
+            </Nav.Link>
           </Nav>
         </Container>
       </Navbar>
@@ -45,7 +61,6 @@ function Header() {
           className={`menu-item text-center border py-2 ${
             activeItem === "products" ? "active" : "text-white"
           }`}
-          style={{ cursor: "pointer" }}
           onClick={() => handleClick("products", "/products")}
         >
           系列鏡框
