@@ -1,6 +1,7 @@
 {
   "name": "react-glasses",
   "private": true,
+  "homepage": "https://edward6m.github.io/react-glasses",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

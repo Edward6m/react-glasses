@@ -54,6 +54,7 @@ function Header() {
           xs={6}
           className="menu-item text-center text-white border py-2"
           onClick={() => handleClick("home", "/")}
+          style={{ cursor: "pointer" }}
         >
           門市據點
         </Col>
@@ -61,6 +62,7 @@ function Header() {
           xs={6}
           className="menu-item text-center text-white border py-2"
           onClick={() => handleClick("home", "/")}
+          style={{ cursor: "pointer" }}
         >
           部落格
         </Col>
@@ -68,6 +70,7 @@ function Header() {
           xs={6}
           className="menu-item text-center text-white border py-2"
           onClick={() => handleClick("home", "/")}
+          style={{ cursor: "pointer" }}
         >
           常見問題
         </Col>

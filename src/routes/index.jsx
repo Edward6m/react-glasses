@@ -11,21 +11,13 @@ const routes = [
     element: <Layout />,
     children: [
       {
-        path: "",
+        index: true,
         element: <Home />,
       },
       {
         path: "products",
         element: <Products />,
       },
-      // {
-      //     path: "product/:id",
-      //     element: <Product />,
-      // },
-      //   {
-      //     path: "cart",
-      //     element: <Cart />,
-      //   },
       {
         path: "*",
         element: <Page404 />,
