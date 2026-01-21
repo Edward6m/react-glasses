@@ -11,7 +11,7 @@ const router = createHashRouter(routes);
 function App() {
   return (
     <>
-      <RouterProvider router={router}></RouterProvider>
+      <RouterProvider router={router} />
     </>
   );
 }
