@@ -1,13 +1,16 @@
 眼鏡官網
 
 使用到以下技術:
-HTML5、SCSS、JavaScript
-"bootstrap": "^5.3.8",
-"prop-types": "^15.8.1",
-"react": "^19.2.0",
-"react-bootstrap": "^2.10.10",
-"react-dom": "^19.2.0",
-"react-router-dom": "^7.11.0",
+
+- HTML5
+- SCSS
+- JavaScript
+- "bootstrap": "^5.3.8"
+- "prop-types": "^15.8.1"
+- "react": "^19.2.0"
+- "react-bootstrap": "^2.10.10"
+- "react-dom": "^19.2.0"
+- "react-router-dom": "^7.11.0"
 
 # React + Vite
 
