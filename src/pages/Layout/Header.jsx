@@ -26,9 +26,9 @@ function Header() {
             <Nav.Link href="#products" onClick={() => navigate("/products")}>
               系列鏡框
             </Nav.Link>
-            <Nav.Link href="/">門市據點</Nav.Link>
-            <Nav.Link href="/">部落格</Nav.Link>
-            <Nav.Link href="/">常見問題</Nav.Link>
+            <Nav.Link onClick={() => navigate("/")}>門市據點</Nav.Link>
+            <Nav.Link onClick={() => navigate("/")}>部落格</Nav.Link>
+            <Nav.Link onClick={() => navigate("/")}>常見問題</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
@@ -53,7 +53,7 @@ function Header() {
         <Col
           xs={6}
           className="menu-item text-center text-white border py-2"
-          onClick={() => handleClick("home", "/#/")}
+          onClick={() => handleClick("home", "/")}
           style={{ cursor: "pointer" }}
         >
           門市據點
