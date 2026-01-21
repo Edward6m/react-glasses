@@ -53,7 +53,7 @@ function Header() {
         <Col
           xs={6}
           className="menu-item text-center text-white border py-2"
-          onClick={() => handleClick("home", "/")}
+          onClick={() => handleClick("home", "/#/")}
           style={{ cursor: "pointer" }}
         >
           門市據點
