@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import fb from "../../assets/image/ic-social-fb.png";
 import ig from "../../assets/image/ic_social_ig.png";
 import line from "../../assets/image/ic_social_line.png";
@@ -15,7 +15,6 @@ import {
 } from "react-bootstrap";
 
 function Footer() {
-  const navigate = useNavigate();
   return (
     <>
       <footer className="bg-subColor ">
@@ -35,20 +34,17 @@ function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a
-                    onClick={() => navigate("/products")}
+                  <Link
+                    to="/products"
                     className="text-white text-decoration-none"
                   >
                     系列鏡框
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="./index.html"
-                    className="text-white text-decoration-none"
-                  >
+                  <Link to="/store" className="text-white text-decoration-none">
                     門市據點
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a
@@ -59,12 +55,9 @@ function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="./index.html"
-                    className="text-white text-decoration-none"
-                  >
+                  <Link to="/qa" className="text-white ">
                     常見問題
-                  </a>
+                  </Link>
                 </li>
               </ul>
 

@@ -27,7 +27,7 @@ function Header() {
               系列鏡框
             </Nav.Link>
 
-            <Nav.Link as={Link} to=".">
+            <Nav.Link as={Link} to="store">
               門市據點
             </Nav.Link>
 
@@ -35,7 +35,7 @@ function Header() {
               部落格
             </Nav.Link>
 
-            <Nav.Link as={Link} to=".">
+            <Nav.Link as={Link} to="qa">
               常見問題
             </Nav.Link>
           </Nav>

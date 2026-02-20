@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Container, Button, Row, Col, Card, Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import icon1 from "../assets/image/home-section2-1.png";
 import icon2 from "../assets/image/home-section2-2.png";
 import icon3 from "../assets/image/home-section2-3.png";
@@ -82,7 +83,7 @@ function Home() {
             Promise-Desert 2020 早春系列
           </p>
           <p className="hero-title ft-color fw-bold mb-4">看得清，才能看得遠</p>
-          <Button className="btn rounded-0" href="#series">
+          <Button className="btn rounded-0" as={Link} to={`/products/`}>
             立即購買
           </Button>
         </Container>
@@ -157,7 +158,6 @@ function Home() {
       {/*  Collaboration   */}
       <section className="cobrand" aria-label="聯名設計鏡框">
         <div className="container">
-          {" "}
           {/* 確保 Container 類別名稱正確 */}
           <h2 className="d-block class-title text-white fw-bold mb-6 text-center">
             聯名設計鏡框
