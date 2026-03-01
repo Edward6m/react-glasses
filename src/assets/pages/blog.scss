@@ -1,0 +1,108 @@
+.blogContent-font {
+  color: $fontColor;
+}
+.tag-font {
+  color: $subColor;
+}
+.ft-36 {
+  font-size: 36px;
+  @media (max-width: 992px) {
+    font-size: 16px;
+  }
+}
+.fs-48 {
+  font-style: 48px;
+}
+.second-menu-bg {
+  background: transparent;
+  background: $fontColor;
+  // @media (min-width: 768px) {
+  //   background: $fontColor;
+  // }
+}
+.search-input {
+  width: 0;
+  opacity: 0;
+  padding: 0;
+  border: none;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.search-input.open {
+  width: 200px;
+  opacity: 1;
+  padding: 6px 12px;
+  margin-right: 10px;
+}
+
+.search-icon {
+  cursor: pointer;
+  font-size: 20px;
+}
+.mt-60 {
+  margin-top: 60px;
+}
+.mt-96 {
+  margin-top: 96px;
+}
+.mt-124 {
+  margin-top: 124px;
+}
+.mb-80 {
+  margin-bottom: 80px;
+}
+/* 一般頁碼 */
+.custom-pagination .page-item .page-link {
+  background-color: #ffffff;
+  color: #000000;
+  // border: 1px solid #dee2e6;
+  border: 1px solid #555555;
+}
+
+/* 作用頁 */
+.custom-pagination .page-item.active .page-link {
+  background-color: #000000;
+  border-color: #000000;
+  color: #ffffff;
+}
+
+/* hover */
+.custom-pagination .page-link:hover {
+  background-color: #f0f0f0;
+  color: #000000;
+}
+
+/* disabled */
+.custom-pagination .page-item.disabled .page-link {
+  background-color: #ffffff;
+  color: #999999;
+}
+
+.tag-font:hover {
+  // background-color: #ffffff;
+  color: #000;
+  transition: 0.3s;
+}
+.my-navlink {
+  @media (max-width: 768px) {
+    font-size: 20px !important;
+  }
+  @media (max-width: 375px) {
+    font-size: 16px !important;
+  }
+}
+.my-navlink:hover {
+  color: black !important;
+  transition: 0.3s;
+}
+/* active (滑鼠按下) */
+.my-navlink:active {
+  font-weight: 500;
+  color: black !important;
+}
+/* Bootstrap active 狀態 */
+.my-navlink.active {
+  color: black !important;
+  font-weight: 500;
+}

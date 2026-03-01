@@ -20,10 +20,10 @@ export default function StoreDetail() {
               width: "8px",
               height: "72px",
               backgroundColor: "#b30000",
-              marginRight: "12px",
+              marginRight: "16x",
             }}
           />
-          <h3 className="fw-bold ps-3 title48">門市據點</h3>
+          <p className="fw-bold ps-3 title48">門市據點</p>
         </div>
 
         {/* 下拉選單 */}

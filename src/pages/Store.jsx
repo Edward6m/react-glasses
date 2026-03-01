@@ -1,4 +1,3 @@
-// import { Container, Row, Col, Nav, Card, Pagination } from "react-bootstrap";
 import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -12,7 +11,7 @@ export default function Store() {
       ? storeList
       : storeList.filter((store) => store.city === selectedCity);
   return (
-    <div className="bg-white">
+    <div className="bg-white py-10">
       <br className="mt-5" />
       <Container className="bg-white">
         {/* 標題 */}
@@ -22,7 +21,7 @@ export default function Store() {
               width: "8px",
               height: "72px",
               backgroundColor: "#b30000",
-              marginRight: "12px",
+              marginRight: "16px",
             }}
           />
           <h3 className="fw-bold ps-3 title48">門市據點</h3>

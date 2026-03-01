@@ -31,7 +31,7 @@ function Header() {
               門市據點
             </Nav.Link>
 
-            <Nav.Link as={Link} to=".">
+            <Nav.Link as={Link} to="blog">
               部落格
             </Nav.Link>
 
@@ -52,7 +52,7 @@ function Header() {
         <Col
           xs={6}
           className={`menu-item text-center border py-2 ${
-            activeItem === "products" ? "active" : "text-white"
+            activeItem === "products" ? "text-black" : "text-white"
           }`}
           onClick={() => handleClick("products", "/products")}
         >
@@ -60,24 +60,30 @@ function Header() {
         </Col>
         <Col
           xs={6}
-          className="menu-item text-center text-white border py-2"
-          onClick={() => handleClick("home", "/")}
+          className={`menu-item text-center text-white border py-2 ${
+            activeItem === "store" ? "text-black" : "text-white"
+          }`}
+          onClick={() => handleClick("store", "/store")}
           style={{ cursor: "pointer" }}
         >
           門市據點
         </Col>
         <Col
           xs={6}
-          className="menu-item text-center text-white border py-2"
-          onClick={() => handleClick("home", "/")}
+          className={`menu-item text-center text-white border py-2 ${
+            activeItem === "blog" ? "text-black" : "text-white"
+          }`}
+          onClick={() => handleClick("blog", "/blog")}
           style={{ cursor: "pointer" }}
         >
           部落格
         </Col>
         <Col
           xs={6}
-          className="menu-item text-center text-white border py-2"
-          onClick={() => handleClick("home", "/")}
+          className={`menu-item text-center text-white border py-2  ${
+            activeItem === "qa" ? "text-black" : "text-white"
+          }`}
+          onClick={() => handleClick("qa", "/qa")}
           style={{ cursor: "pointer" }}
         >
           常見問題

@@ -28,7 +28,10 @@ function Footer() {
                 <li>
                   <a
                     href="./index.html"
-                    className="text-white text-decoration-none"
+                    className="text-white text-decoration-none my-navlink"
+                    onClick={() =>
+                      window.scrollTo({ top: 0, behavior: "smooth" })
+                    }
                   >
                     首頁
                   </a>
@@ -36,26 +39,44 @@ function Footer() {
                 <li>
                   <Link
                     to="/products"
-                    className="text-white text-decoration-none"
+                    className="text-white text-decoration-none my-navlink"
+                    onClick={() =>
+                      window.scrollTo({ top: 0, behavior: "smooth" })
+                    }
                   >
                     系列鏡框
                   </Link>
                 </li>
                 <li>
-                  <Link to="/store" className="text-white text-decoration-none">
+                  <Link
+                    to="/store"
+                    className="text-white text-decoration-none my-navlink"
+                    onClick={() =>
+                      window.scrollTo({ top: 0, behavior: "smooth" })
+                    }
+                  >
                     門市據點
                   </Link>
                 </li>
                 <li>
-                  <a
-                    href="./index.html"
-                    className="text-white text-decoration-none"
+                  <Link
+                    to="/blog"
+                    className="text-white text-decoration-none my-navlink"
+                    onClick={() =>
+                      window.scrollTo({ top: 0, behavior: "smooth" })
+                    }
                   >
                     部落格
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/qa" className="text-white ">
+                  <Link
+                    to="/qa"
+                    className="text-white my-navlink"
+                    onClick={() =>
+                      window.scrollTo({ top: 0, behavior: "smooth" })
+                    }
+                  >
                     常見問題
                   </Link>
                 </li>
@@ -63,40 +84,54 @@ function Footer() {
 
               {/*  手機版：電話 + social icons（同一列） */}
               <div className="d-flex d-md-none justify-content-between align-items-center text-white mb-2">
-                <div className="d-flex align-items-center">
+                <a
+                  href="tel:0800000000"
+                  className="d-inline-flex align-items-center text-decoration-none text-reset"
+                >
                   <span className="material-icons-outlined me-2">call</span>
                   0800-000-000
-                </div>
+                </a>
 
                 <div className="d-flex gap-2">
-                  <a href="#">
-                    <img src={fb} alt="fb" className="footer-icon" />
+                  <a href="http://www.facebook.com" target="_blank">
+                    <img src={fb} alt="fb" className="footer-icon " />
                   </a>
-                  <a href="#">
+                  <a href="https://www.instagram.com/" target="_blank">
                     <img src={ig} alt="ig" className="footer-icon" />
                   </a>
-                  <a href="#">
+                  <a href="https://www.line.me/tw/" target="_blank">
                     <img src={line} alt="line" className="footer-icon" />
                   </a>
                 </div>
               </div>
 
               {/*  手機版：第二列 email */}
-              <div className="d-flex d-md-none align-items-center text-white">
+
+              <a
+                href="mailto:glasses@business.com"
+                className="d-md-none d-inline-flex align-items-center text-white "
+              >
                 <span className="material-icons-outlined me-2">email</span>
                 glasses@business.com
-              </div>
+              </a>
 
               {/* md 以上：contact info */}
               <div className="text-white d-none d-md-block">
-                <p className="d-flex align-items-center mb-2 fs-3">
+                <a
+                  href="tel:0800000000"
+                  className="d-flex align-items-center  mb-2 fs-3 text-decoration-none text-reset"
+                >
                   <span className="material-icons-outlined me-3">call</span>
                   0800-000-000
-                </p>
-                <p className="d-flex align-items-center mb-0 fs-3">
+                </a>
+
+                <a
+                  href="mailto:glasses@business.com"
+                  className="d-inline-flex align-items-center  mb-0 fs-3"
+                >
                   <span className="material-icons-outlined me-3">email</span>
                   glasses@business.com
-                </p>
+                </a>
               </div>
             </Col>
 
@@ -105,13 +140,13 @@ function Footer() {
               md={3}
               className="d-none d-md-flex justify-content-end align-items-start gap-3"
             >
-              <a href="#">
+              <a href="http://www.facebook.com" target="_blank">
                 <img src={fb} alt="fb" className="footer-icon" />
               </a>
-              <a href="#">
+              <a href="https://www.instagram.com/" target="_blank">
                 <img src={ig} alt="ig" className="footer-icon" />
               </a>
-              <a href="#">
+              <a href="https://www.line.me/tw/" target="_blank">
                 <img src={line} alt="line" className="footer-icon" />
               </a>
             </Col>

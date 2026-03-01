@@ -1,131 +1,128 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    font-family: "Noto Sans TC", roboto, sans-serif;
-    // color: #650300;
-    background-color:#aa0601 ;
+  margin: 0;
+  font-family: "Roboto", "Noto Sans TC", sans-serif;
+  // color: #650300;
+  background-color: #aa0601;
 }
 
 .container {
-    width: 100%;
-    // max-width: 1320px;
-    margin: 0 auto;
-    // padding: 0 12px;
+  width: 100%;
+  // max-width: 1320px;
+  margin: 0 auto;
+  // padding: 0 12px;
 }
 @media (max-width: 992px) {
-    .container {
-        max-width: 720px;
-    }
+  .container {
+    max-width: 720px;
+  }
 }
 
 @media (max-width: 576px) {
-    .container {
-        max-width: 372px;
-    }
+  .container {
+    max-width: 372px;
+  }
 }
 
 /* 確保 header 可以自適應高度，並增加 padding */
 .header {
-    // background: #aa0601;
-    border-bottom: 1px solid var(--border);
-    // position: sticky;
-    top: 0; /* 確保頂部固定 */
-    height: auto; /* 移除固定高度 */
-    min-height: 80px; /* 設定最小高度 */
-    padding: 10px 0; /* 增加上下內距 */
+  // background: #aa0601;
+  border-bottom: 1px solid var(--border);
+  // position: sticky;
+  top: 0; /* 確保頂部固定 */
+  height: auto; /* 移除固定高度 */
+  min-height: 80px; /* 設定最小高度 */
+  padding: 10px 0; /* 增加上下內距 */
 }
 
 /* 桌面版 header 容器：水平排列 */
 .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; /* 允許在行動裝置換行 */    
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* 允許在行動裝置換行 */
 }
-.display-img{
-    display: block;
-    color: white;
-        text-decoration: none;
-        padding: 25px 32px;
+.display-img {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 25px 32px;
 }
 
 .logo {
-    max-width: 80px;
-    // display: block;
+  max-width: 80px;
+  // display: block;
 }
 
 /* 桌面版 nav 樣式 */
 .nav {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .nav a {
-    
-    color: #FFFFFF;
-    text-decoration: none;
-    margin-left: 64px;
-    font-weight: 500;
-    font-size: 20px;
-    text-transform: uppercase;
-    opacity: 1;
-
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 64px;
+  font-weight: 500;
+  font-size: 20px;
+  text-transform: uppercase;
+  opacity: 1;
 }
 
 .nav a:hover {
-    color: var(--red);
+  color: var(--red);
 }
 
-
 @media (max-width: 375px) {
-    .header {
-        padding-bottom: 0; /* 讓 Menu 底線貼齊 header 下緣 */
-        border-bottom: none; /* 移除原本重複的底線 */
-    }
+  .header {
+    padding-bottom: 0; /* 讓 Menu 底線貼齊 header 下緣 */
+    border-bottom: none; /* 移除原本重複的底線 */
+  }
 
-    /* 修正容器：將原本的 center 改為 flex-start 讓內容靠左 */
-    .header-container {
-        flex-direction: column;
-        align-items: flex-start; /* 關鍵：讓子元素(Logo)靠左對齊 */
-        padding: 0; 
-    }
+  /* 修正容器：將原本的 center 改為 flex-start 讓內容靠左 */
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start; /* 關鍵：讓子元素(Logo)靠左對齊 */
+    padding: 0;
+  }
 
-    /* 確保 Logo 連結本身有間距，不至於死貼螢幕邊緣 */
-    .logo-link {
-        padding-left: 12px; /* 依照設計需求調整左邊距 */
-    }
+  /* 確保 Logo 連結本身有間距，不至於死貼螢幕邊緣 */
+  .logo-link {
+    padding-left: 12px; /* 依照設計需求調整左邊距 */
+  }
 
-    .header-nav {
-        width: 100%;       
-        margin-top: 16px;
-        display: flex;
-        flex-wrap: wrap; 
-        border-top: 1px solid #FFFFFF; 
-        box-sizing: border-box;    
-        margin-left: 0;
-        margin-right: 0;
-        align-self: center; /* 選項：若 nav 內部想維持全寬則不需此行 */
-    }
-    
-    .header-nav a {
-        width: 50%;        
-        text-align: center;
-        margin-left: 0;    
-        padding: 15px 0;
-        font-size: 16px;
-        color: #FFFFFF;
-        text-decoration: none;
-        box-sizing: border-box; 
-        border-bottom: 1px solid #FFFFFF; 
-    }
+  .header-nav {
+    width: 100%;
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid #ffffff;
+    box-sizing: border-box;
+    margin-left: 0;
+    margin-right: 0;
+    align-self: center; /* 選項：若 nav 內部想維持全寬則不需此行 */
+  }
 
-    /* 垂直中間線 */
-    .header-nav a:nth-child(odd) {
-        border-right: 1px solid #FFFFFF;
-    }
+  .header-nav a {
+    width: 50%;
+    text-align: center;
+    margin-left: 0;
+    padding: 15px 0;
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ffffff;
+  }
+
+  /* 垂直中間線 */
+  .header-nav a:nth-child(odd) {
+    border-right: 1px solid #ffffff;
+  }
 }

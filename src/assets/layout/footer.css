@@ -11,9 +11,17 @@
   text-decoration: none;
 }
 
-.footer_icon {
+.footer-icon {
   width: 48px;
   height: 48px;
+  transition:
+    transform 0.3s,
+    opacity 0.3s; /* 平滑過渡 */
+  display: block; /* 確保 img 本身是 block，不被 inline 干擾 */
+}
+.footer-icon:hover {
+  transform: scale(1.1) !important; /* 放大 10% */
+  opacity: 0.8; /* 透明度降低 */
 }
 
 .footer_phone {
@@ -22,4 +30,5 @@
 
 .margin_r {
   margin-right: 48px;
-}/*# sourceMappingURL=footer.css.map */
+}
+/*# sourceMappingURL=footer.css.map */
