@@ -6,7 +6,9 @@ import img2 from "../assets/image/blog-2.png";
 import img3 from "../assets/image/blog-3.png";
 import img4 from "../assets/image/blog-4.png";
 import img5 from "../assets/image/blog-5.png";
-export const blogData = [
+import { type BlogItem } from "./blogType";
+
+export const blogData : BlogItem[]= [
   {
     id: 1,
     category: "特別企劃",

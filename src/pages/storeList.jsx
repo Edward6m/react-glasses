@@ -17,7 +17,7 @@ export const storeList = [
   },
   {
     id: 2,
-    name: "台北松山店",
+    name: "台北中正店",
     img: store2,
     phone: "(02)000-2345",
     hours: "10:00-21:00",

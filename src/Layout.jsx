@@ -2,33 +2,33 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
 
-import Header from './pages/Layout/Header';
-import Footer from './pages/Layout/Footer';
-import { toast } from 'react-toastify';
+import Header from "./pages/Layout/Header";
+import Footer from "./pages/Layout/Footer";
+import { toast } from "react-toastify";
 import { Toast } from "./components/common/Toast";
 
 function Layout() {
-    const message = useSelector((state) => {
-        return state.toast.data;
-    });
+  const message = useSelector((state) => {
+    return state.toast.data;
+  });
 
-    useEffect(() => {
-        if (!message.type) return;
-        if (message.type == "success") {
-            toast.success(message.message);
-        } else if (message.type == "error") {
-            toast.error(message.message);
-        }
-    }, [message]);
+  useEffect(() => {
+    if (!message.type) return;
+    if (message.type == "success") {
+      toast.success(message.message);
+    } else if (message.type == "error") {
+      toast.error(message.message);
+    }
+  }, [message]);
 
-    return (
-        <>
-            <Header />
-            <Toast />
-            <Outlet />
-            <Footer />
-        </>
-    );
+  return (
+    <>
+      <Header />
+      <Toast />
+      <Outlet />
+      <Footer />
+    </>
+  );
 }
 
 export default Layout;

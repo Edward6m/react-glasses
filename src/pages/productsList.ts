@@ -1,4 +1,12 @@
-export const productsList = [
+export interface Product {
+  id: number;
+  code: string;
+  price: string;
+  img: string;
+  colors: string[];
+  sun: number; 
+};
+export const productsList :Product[] = [
   {
     id: 1,
     code: "BJ41600S",

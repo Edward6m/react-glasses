@@ -29,8 +29,6 @@
 
 .hero-content {
   text-align: right;
-  // margin-right: 36px;
-  // padding-right: 7.6923%;
 }
 
 .hero-title {
@@ -226,7 +224,12 @@
 }
 .contact-form {
   max-width: 636px;
+  ::placeholder {
+    color: #adb5bd;
+    opacity: 1;
+  }
 }
+
 .contact-border {
   border: 1px solid #000000;
 }
