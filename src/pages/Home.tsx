@@ -1,7 +1,8 @@
-import React, { useState, useCallback, memo } from "react";
+import { useState, useCallback, memo, useEffect } from "react";
 import { Container, Button, Row, Col, Card, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { useDispatch } from "react-redux";
+import { pushToast } from "../slice/toastSlice";
 
 // ── Assets ──────────────────────────────────────────────
 import icon1 from "../assets/image/home-section2-1.png";
@@ -21,41 +22,41 @@ import test4 from "../assets/image/home-section5-4.png";
 // ── Types ────────────────────────────────────────────────
 interface Service {
   title: string;
-  desc: string;
-  icon: string;
+  desc:  string;
+  icon:  string;
 }
 
 interface Category {
   label: string;
-  img: string;
+  img:   string;
 }
 
 interface CoBrand {
   name: string;
-  img: string;
+  img:  string;
 }
 
 interface Testimonial {
   name: string;
   date: string;
   text: string;
-  pic: string;
+  pic:  string;
 }
 
 interface ContactFormState {
-  name: string;
-  phone: string;
-  email: string;
+  name:    string;
+  phone:   string;
+  email:   string;
   message: string;
-  agree: boolean;
+  agree:   boolean;
 }
 
 // ── Static Data ──────────────────────────────────────────
 const SERVICES: Service[] = [
-  { title: "單一價格",       desc: "無論任何度數皆不需追加費用即可擁有適合自己的薄型球面鏡片。",                                          icon: icon1 },
-  { title: "20分鐘即可取件", desc: "為了您的寶貴時間著想，以豐富專業知識與技術將結帳到交件的時間縮減至最快 20 分鐘即可完成。",            icon: icon2 },
-  { title: "安心售後服務",   desc: "我們提供長達 120 天的保固售後服務，不限會員資格皆享有免費深層保養及專業維修服務。",                  icon: icon3 },
-  { title: "關於鏡片",       desc: "使用世界知名頂級品牌，抗UV、防汙鍍膜薄型非球面鏡片。",                                              icon: icon4 },
+  { title: "單一價格",       desc: "無論任何度數皆不需追加費用即可擁有適合自己的薄型球面鏡片。",                                icon: icon1 },
+  { title: "20分鐘即可取件", desc: "為了您的寶貴時間著想，以豐富專業知識與技術將結帳到交件的時間縮減至最快 20 分鐘即可完成。", icon: icon2 },
+  { title: "安心售後服務",   desc: "我們提供長達 120 天的保固售後服務，不限會員資格皆享有免費深層保養及專業維修服務。",       icon: icon3 },
+  { title: "關於鏡片",       desc: "使用世界知名頂級品牌，抗UV、防汙鍍膜薄型非球面鏡片。",                                    icon: icon4 },
 ];
 
 const CATEGORIES: Category[] = [
@@ -86,20 +87,11 @@ const FORM_FIELDS = [
   { id: "email", label: "電子郵件", type: "email", placeholder: "you@example.com" },
 ] as const;
 
-
-// ── Sub Components（memo 避免不必要 re-render）───────────
-const ServiceCard = memo<Service>(({ title, desc, icon }) => (
+// ── Sub Components ───────────────────────────────────────
+const ServiceCard = memo(({ title, desc, icon }: Service) => (
   <Card className="border-0 w-100 feature-card">
     <Card.Body className="feature-list">
-      {/* loading="lazy" 延遲載入非首屏圖片 */}
-      <img
-        className="feature-icon"
-        src={icon}
-        alt={`${title} icon`}
-        // loading="lazy"
-        width={64}
-        height={64}
-      />
+      <img className="feature-icon" src={icon} alt={`${title} icon`} width={64} height={64} />
       <Card.Title as="h3" className="feature-item">{title}</Card.Title>
       <Card.Text className="feature-desc mb-20">{desc}</Card.Text>
     </Card.Body>
@@ -107,20 +99,17 @@ const ServiceCard = memo<Service>(({ title, desc, icon }) => (
 ));
 ServiceCard.displayName = "ServiceCard";
 
-const CategoryCard = memo<Category>(({ label, img }) => (
+const CategoryCard = memo(({ label, img }: Category) => (
   <Card className="classic border-0 text-center">
     <Card.Img src={img} alt={`${label} 系列鏡框`} loading="lazy" />
-    <Card.Title
-      as="h3"
-      className="classic-text fw-bold fst-italic text-center p-2"
-    >
+    <Card.Title as="h3" className="classic-text fw-bold fst-italic text-center p-2">
       {label}
     </Card.Title>
   </Card>
 ));
 CategoryCard.displayName = "CategoryCard";
 
-const TestimonialCard = memo<Testimonial>(({ name, date, text, pic }) => (
+const TestimonialCard = memo(({ name, date, text, pic }: Testimonial) => (
   <Card className="h-100 w-100 d-flex flex-column custom-card-shadow">
     <Card.Img
       variant="top"
@@ -134,7 +123,6 @@ const TestimonialCard = memo<Testimonial>(({ name, date, text, pic }) => (
         <Card.Title className="test_name mt-4">{name}</Card.Title>
         <Card.Text className="test_name mt-2 mb-8 test_mb">{text}</Card.Text>
       </div>
-      {/* 使用 time 標籤讓搜尋引擎理解日期 */}
       <Card.Subtitle
         as="time"
         dateTime={date.replace(/\//g, "-")}
@@ -148,11 +136,10 @@ const TestimonialCard = memo<Testimonial>(({ name, date, text, pic }) => (
 TestimonialCard.displayName = "TestimonialCard";
 
 // ── Contact Form ─────────────────────────────────────────
-const ContactForm: React.FC = () => {
-  const [form, setForm] = useState<ContactFormState>(INITIAL_FORM);
+const ContactForm = () => {
+  const [form, setForm]           = useState<ContactFormState>(INITIAL_FORM);
   const [submitted, setSubmitted] = useState(false);
 
-  // useCallback 避免子元件不必要 re-render
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       const { id, value } = e.target;
@@ -169,7 +156,6 @@ const ContactForm: React.FC = () => {
   const handleSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      // TODO: 串接 API
       console.log("送出表單：", form);
       setSubmitted(true);
       setForm(INITIAL_FORM);
@@ -179,21 +165,14 @@ const ContactForm: React.FC = () => {
   if (submitted) {
     return (
       <p className="text-center text-success fw-bold py-5" role="alert">
-         感謝您的留言，我們將盡快與您聯繫！
+        感謝您的留言，我們將盡快與您聯繫！
       </p>
     );
   }
 
   return (
-    <Form
-      className="contact-form"
-      onSubmit={handleSubmit}
-      aria-label="聯絡我們表單"
-      noValidate
-    >
-      <p>
-        我們相當重視您的意見，若您有任何疑問，可先參考「常見問題」，若仍有任何問題，請填妥以下資料，我們會在近期與您聯繫。
-      </p>
+    <Form className="contact-form" onSubmit={handleSubmit} aria-label="聯絡我們表單" noValidate>
+      <p>我們相當重視您的意見，若您有任何疑問，可先參考「常見問題」，若仍有任何問題，請填妥以下資料，我們會在近期與您聯繫。</p>
 
       {FORM_FIELDS.map(({ id, label, type, placeholder }) => (
         <Form.Group controlId={id} key={id} className="mb-3">
@@ -248,12 +227,21 @@ const ContactForm: React.FC = () => {
 };
 
 // ── Main Component ───────────────────────────────────────
-const Home: React.FC = () => (
-  <>
-    {/* <SEO /> */}
+const Home = () => {
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(
+      pushToast({
+        type: "success",
+        message: "歡迎進入眼鏡官網",
+      })
+    );
+  }, [dispatch]);
+
+  return (
     <main>
-      {/* Hero — 首屏圖片不加 lazy，優先載入 */}
+      {/* Hero */}
       <section className="hero py-5" aria-label="首頁橫幅">
         <Container className="hero-content">
           <p className="mb-3 hero-title1 ft-color">Promise-Desert 2020 早春系列</p>
@@ -339,7 +327,7 @@ const Home: React.FC = () => (
         </Container>
       </section>
     </main>
-  </>
-);
+  );
+};
 
 export default Home;

@@ -1,7 +1,9 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Container, Row, Col, Card, Pagination } from "react-bootstrap";
 // import { productsList } from "./productsList.jsx";
 import { productsList, type Product } from "./productsList.js";
+import { useDispatch } from "react-redux";
+import { pushToast } from "../slice/toastSlice";
 // ── Assets ──────────────────────────────────────────────
 import glassesbanner1 from "../assets/image/product-header-1.png";
 import glassesbanner2 from "../assets/image/product-header-2.png";
@@ -91,6 +93,17 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => (
 const Products: React.FC = () => {
   const [activeKey, setActiveKey] = useState<TabKey>("optical");
   const [currentPage, setCurrentPage] = useState<number>(1);
+
+   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(
+      pushToast({
+        type: "success",
+        message: "3類鏡框可選擇",
+      })
+    );
+  }, [dispatch]);
 
   // 切換 tab 時重置頁碼
   const handleTabSelect = (key: TabKey) => {
