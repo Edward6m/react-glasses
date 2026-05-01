@@ -4,7 +4,7 @@
 
 - HTML5
 - SCSS
-- JavaScript
+- JavaScript/TypeScript
 - "bootstrap": "^5.3.8"
 - "prop-types": "^15.8.1"
 - "react": "^19.2.0"
